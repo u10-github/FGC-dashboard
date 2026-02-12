@@ -54,7 +54,7 @@ p {
 table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 700px;
+  min-width: 560px;
 }
 
 th,
@@ -74,12 +74,34 @@ th {
   font-weight: 700;
 }
 
+
+.sale-row {
+  background: rgba(255, 185, 78, 0.1);
+}
+
+.sale-row td {
+  border-bottom-color: #7b6440;
+}
+
+.sale-badge {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #ffb84e;
+  color: #2e220b;
+  font-weight: 700;
+  font-size: 0.78rem;
+}
+
+.title-link,
 a {
   color: #88c9ff;
   text-decoration: none;
   font-weight: 600;
 }
 
+.title-link:hover,
 a:hover {
   text-decoration: underline;
 }
@@ -122,21 +144,14 @@ a:hover {
 
   th:first-child,
   td:first-child {
-    width: 58%;
+    width: 72%;
     overflow-wrap: anywhere;
     word-break: break-word;
   }
 
   th:nth-child(2),
   td:nth-child(2) {
-    width: 22%;
-    white-space: nowrap;
-  }
-
-  th:nth-child(3),
-  td:nth-child(3) {
-    width: 20%;
-    text-align: center;
+    width: 28%;
     white-space: nowrap;
   }
 }

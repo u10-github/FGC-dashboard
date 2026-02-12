@@ -23,13 +23,21 @@ describe('buildPlayerPayload', () => {
     ];
 
     const fetcher = vi.fn(async (appid: number) => appid * 2);
-    const payload = await buildPlayerPayload(games, null, fetcher);
+    const saleFetcher = vi.fn(async () => ({ isOnSale: true, discountPercent: 50 }));
+    const payload = await buildPlayerPayload(games, null, fetcher, saleFetcher);
 
     expect(payload.items.map((item) => item.id)).toEqual(['a', 'b', 'c']);
     expect(payload.items[0].playerCount).toBe(200);
+    expect(payload.items[0].isOnSale).toBe(true);
+    expect(payload.items[0].discountPercent).toBe(50);
     expect(payload.items[1].playerCount).toBeNull();
+    expect(payload.items[1].isOnSale).toBeNull();
+    expect(payload.items[1].discountPercent).toBeNull();
     expect(payload.items[2].playerCount).toBeNull();
+    expect(payload.items[2].isOnSale).toBeNull();
+    expect(payload.items[2].discountPercent).toBeNull();
     expect(fetcher).toHaveBeenCalledTimes(1);
+    expect(saleFetcher).toHaveBeenCalledTimes(1);
   });
 
   it('falls back to previous playerCount when fetch fails', async () => {
@@ -44,6 +52,8 @@ describe('buildPlayerPayload', () => {
           name: 'Street Fighter 6',
           appid: 1364780,
           playerCount: 999,
+          isOnSale: true,
+          discountPercent: 35,
           storeUrl: 'https://store.steampowered.com/app/1364780/',
           runUrl: 'steam://run/1364780',
         },
@@ -54,8 +64,14 @@ describe('buildPlayerPayload', () => {
       throw new Error('network failed');
     });
 
-    const payload = await buildPlayerPayload(games, previous, fetcher);
+    const saleFetcher = vi.fn(async () => {
+      throw new Error('store failed');
+    });
+
+    const payload = await buildPlayerPayload(games, previous, fetcher, saleFetcher);
 
     expect(payload.items[0].playerCount).toBe(999);
+    expect(payload.items[0].isOnSale).toBe(true);
+    expect(payload.items[0].discountPercent).toBe(35);
   });
 });

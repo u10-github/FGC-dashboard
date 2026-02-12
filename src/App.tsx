@@ -5,6 +5,8 @@ type PlayerItem = {
   name: string;
   appid: number | null;
   playerCount: number | null;
+  isOnSale: boolean | null;
+  discountPercent: number | null;
   storeUrl: string | null;
   runUrl: string | null;
 };
@@ -95,25 +97,26 @@ export function App() {
             <thead>
               <tr>
                 <th>タイトル</th>
-                <th>プレイ中人数</th>
-                <th>ストア</th>
+                <th>同接数</th>
               </tr>
             </thead>
             <tbody>
               {rows.map((item) => {
                 return (
-                  <tr key={item.id}>
-                    <td>{item.name}</td>
-                    <td className="count">{formatCount(item.playerCount)}</td>
+                  <tr key={item.id} className={item.isOnSale ? 'sale-row' : undefined}>
                     <td>
                       {item.storeUrl ? (
-                        <a href={item.storeUrl} target="_blank" rel="noreferrer">
-                          Store
+                        <a href={item.storeUrl} target="_blank" rel="noreferrer" className="title-link">
+                          {item.name}
                         </a>
                       ) : (
-                        <span className="muted">AppID未設定</span>
+                        <span>{item.name}</span>
                       )}
+                      {item.isOnSale ? (
+                        <span className="sale-badge">SALE -{item.discountPercent ?? 0}%</span>
+                      ) : null}
                     </td>
+                    <td className="count">{formatCount(item.playerCount)}</td>
                   </tr>
                 );
               })}
