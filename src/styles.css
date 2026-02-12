@@ -108,4 +108,35 @@ a:hover {
   .card {
     padding: 14px;
   }
+
+  table {
+    min-width: 0;
+    table-layout: fixed;
+  }
+
+  th,
+  td {
+    padding: 9px 6px;
+    font-size: 0.92rem;
+  }
+
+  th:first-child,
+  td:first-child {
+    width: 58%;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  th:nth-child(2),
+  td:nth-child(2) {
+    width: 22%;
+    white-space: nowrap;
+  }
+
+  th:nth-child(3),
+  td:nth-child(3) {
+    width: 20%;
+    text-align: center;
+    white-space: nowrap;
+  }
 }
