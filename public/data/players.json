@@ -1,0 +1,133 @@
+{
+  "updatedAt": "2026-02-12T00:05:15.624Z",
+  "items": [
+    {
+      "id": "street-fighter-6",
+      "name": "Street Fighter 6",
+      "appid": 1364780,
+      "playerCount": 7153,
+      "storeUrl": "https://store.steampowered.com/app/1364780/",
+      "runUrl": "steam://run/1364780"
+    },
+    {
+      "id": "tekken-8",
+      "name": "TEKKEN 8",
+      "appid": 1778820,
+      "playerCount": 5138,
+      "storeUrl": "https://store.steampowered.com/app/1778820/",
+      "runUrl": "steam://run/1778820"
+    },
+    {
+      "id": "guilty-gear-strive",
+      "name": "GUILTY GEAR STRIVE",
+      "appid": 1384160,
+      "playerCount": 1120,
+      "storeUrl": "https://store.steampowered.com/app/1384160/",
+      "runUrl": "steam://run/1384160"
+    },
+    {
+      "id": "granblue-fantasy-versus-rising",
+      "name": "Granblue Fantasy Versus Rising",
+      "appid": 2157560,
+      "playerCount": 1129,
+      "storeUrl": "https://store.steampowered.com/app/2157560/",
+      "runUrl": "steam://run/2157560"
+    },
+    {
+      "id": "dragon-ball-fighterz",
+      "name": "DRAGON BALL FighterZ",
+      "appid": 678950,
+      "playerCount": 754,
+      "storeUrl": "https://store.steampowered.com/app/678950/",
+      "runUrl": "steam://run/678950"
+    },
+    {
+      "id": "virtua-fighter-5-revo-ws",
+      "name": "Virtua Fighter 5 REVO WS",
+      "appid": 3112260,
+      "playerCount": 72,
+      "storeUrl": "https://store.steampowered.com/app/3112260/",
+      "runUrl": "steam://run/3112260"
+    },
+    {
+      "id": "blazblue-centralfiction",
+      "name": "BlazBlue Centralfiction",
+      "appid": 586140,
+      "playerCount": 185,
+      "storeUrl": "https://store.steampowered.com/app/586140/",
+      "runUrl": "steam://run/586140"
+    },
+    {
+      "id": "kof-xv",
+      "name": "KOF XV",
+      "appid": 1498570,
+      "playerCount": 153,
+      "storeUrl": "https://store.steampowered.com/app/1498570/",
+      "runUrl": "steam://run/1498570"
+    },
+    {
+      "id": "soulcalibur-vi",
+      "name": "SOULCALIBUR VI",
+      "appid": 544750,
+      "playerCount": 159,
+      "storeUrl": "https://store.steampowered.com/app/544750/",
+      "runUrl": "steam://run/544750"
+    },
+    {
+      "id": "fatal-fury-cotw",
+      "name": "FATAL FURY CotW",
+      "appid": 2492040,
+      "playerCount": 237,
+      "storeUrl": "https://store.steampowered.com/app/2492040/",
+      "runUrl": "steam://run/2492040"
+    },
+    {
+      "id": "dead-or-alive-6",
+      "name": "DEAD OR ALIVE 6",
+      "appid": 838380,
+      "playerCount": 64,
+      "storeUrl": "https://store.steampowered.com/app/838380/",
+      "runUrl": "steam://run/838380"
+    },
+    {
+      "id": "under-night-in-birth-ii",
+      "name": "UNDER NIGHT IN-BIRTH II",
+      "appid": 2076010,
+      "playerCount": 142,
+      "storeUrl": "https://store.steampowered.com/app/2076010/",
+      "runUrl": "steam://run/2076010"
+    },
+    {
+      "id": "melty-blood-type-lumina",
+      "name": "MELTY BLOOD TYPE LUMINA",
+      "appid": 1372280,
+      "playerCount": 75,
+      "storeUrl": "https://store.steampowered.com/app/1372280/",
+      "runUrl": "steam://run/1372280"
+    },
+    {
+      "id": "samurai-spirits",
+      "name": "SAMURAI SPIRITS",
+      "appid": 1342260,
+      "playerCount": 5,
+      "storeUrl": "https://store.steampowered.com/app/1342260/",
+      "runUrl": "steam://run/1342260"
+    },
+    {
+      "id": "dnf-duel",
+      "name": "DNF DUEL",
+      "appid": 1216060,
+      "playerCount": 7,
+      "storeUrl": "https://store.steampowered.com/app/1216060/",
+      "runUrl": "steam://run/1216060"
+    },
+    {
+      "id": "hunter-hunter-nen-impact",
+      "name": "HUNTER×HUNTER NEN×IMPACT",
+      "appid": 2456420,
+      "playerCount": 2,
+      "storeUrl": "https://store.steampowered.com/app/2456420/",
+      "runUrl": "steam://run/2456420"
+    }
+  ]
+}

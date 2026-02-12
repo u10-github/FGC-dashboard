@@ -1,0 +1,18 @@
+[
+  { "id": "street-fighter-6", "name": "Street Fighter 6", "appid": 1364780, "enabled": true },
+  { "id": "tekken-8", "name": "TEKKEN 8", "appid": 1778820, "enabled": true },
+  { "id": "guilty-gear-strive", "name": "GUILTY GEAR STRIVE", "appid": 1384160, "enabled": true },
+  { "id": "granblue-fantasy-versus-rising", "name": "Granblue Fantasy Versus Rising", "appid": 2157560, "enabled": true },
+  { "id": "dragon-ball-fighterz", "name": "DRAGON BALL FighterZ", "appid": 678950, "enabled": true },
+  { "id": "virtua-fighter-5-revo-ws", "name": "Virtua Fighter 5 REVO WS", "appid": 3112260, "enabled": true },
+  { "id": "blazblue-centralfiction", "name": "BlazBlue Centralfiction", "appid": 586140, "enabled": true },
+  { "id": "kof-xv", "name": "KOF XV", "appid": 1498570, "enabled": true },
+  { "id": "soulcalibur-vi", "name": "SOULCALIBUR VI", "appid": 544750, "enabled": true },
+  { "id": "fatal-fury-cotw", "name": "FATAL FURY CotW", "appid": 2492040, "enabled": true },
+  { "id": "dead-or-alive-6", "name": "DEAD OR ALIVE 6", "appid": 838380, "enabled": true },
+  { "id": "under-night-in-birth-ii", "name": "UNDER NIGHT IN-BIRTH II", "appid": 2076010, "enabled": true },
+  { "id": "melty-blood-type-lumina", "name": "MELTY BLOOD TYPE LUMINA", "appid": 1372280, "enabled": true },
+  { "id": "samurai-spirits", "name": "SAMURAI SPIRITS", "appid": 1342260, "enabled": true },
+  { "id": "dnf-duel", "name": "DNF DUEL", "appid": 1216060, "enabled": true },
+  { "id": "hunter-hunter-nen-impact", "name": "HUNTER×HUNTER NEN×IMPACT", "appid": 2456420, "enabled": true }
+]
