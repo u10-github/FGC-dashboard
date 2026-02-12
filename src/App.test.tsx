@@ -60,7 +60,6 @@ describe('App', () => {
     expect(await screen.findByText('同接数')).toBeInTheDocument();
     expect(screen.queryByText('ストア')).not.toBeInTheDocument();
   });
-
   it('highlights rows when game is on sale', async () => {
     global.fetch = vi.fn(async () =>
       new Response(JSON.stringify(okPayload), {
