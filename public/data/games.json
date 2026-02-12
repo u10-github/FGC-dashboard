@@ -17,7 +17,7 @@
   { "id": "hunter-hunter-nen-impact", "name": "HUNTER×HUNTER NEN×IMPACT", "appid": 2456420, "enabled": true },
   { "id": "phantom-breaker-omnia", "name": "Phantom Breaker: Omnia", "appid": 1184560, "enabled": true },
   { "id": "killer-instinct", "name": "Killer Instinct", "appid": 577940, "enabled": true },
-  { "id": "koihime-enbu", "name": "恋姫†演武", "appid": 452420, "enabled": true },
+  { "id": "koihime-enbu-ryorairai", "name": "恋姫†演武 ～遼来来～", "appid": 795510, "enabled": true },
   { "id": "capcom-fighting-collection", "name": "カプコン ファイティング コレクション", "appid": 1685750, "enabled": true },
   { "id": "capcom-fighting-collection-2", "name": "カプコン ファイティング コレクション2", "appid": 2400430, "enabled": true }
 ]

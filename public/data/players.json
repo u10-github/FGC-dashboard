@@ -182,14 +182,14 @@
       "runUrl": "steam://run/577940"
     },
     {
-      "id": "koihime-enbu",
-      "name": "恋姫†演武",
-      "appid": 452420,
+      "id": "koihime-enbu-ryorairai",
+      "name": "恋姫†演武 ～遼来来～",
+      "appid": 795510,
       "playerCount": 1,
       "isOnSale": null,
       "discountPercent": null,
-      "storeUrl": "https://store.steampowered.com/app/452420/",
-      "runUrl": "steam://run/452420"
+      "storeUrl": "https://store.steampowered.com/app/795510/_/",
+      "runUrl": "steam://run/795510"
     },
     {
       "id": "capcom-fighting-collection",
