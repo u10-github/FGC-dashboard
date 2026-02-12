@@ -1,11 +1,13 @@
 {
-  "updatedAt": "2026-02-12T01:00:50.886Z",
+  "updatedAt": "2026-02-12T03:32:04.428Z",
   "items": [
     {
       "id": "street-fighter-6",
       "name": "Street Fighter 6",
       "appid": 1364780,
       "playerCount": 8114,
+      "isOnSale": null,
+      "discountPercent": null,
       "storeUrl": "https://store.steampowered.com/app/1364780/",
       "runUrl": "steam://run/1364780"
     },
@@ -14,6 +16,8 @@
       "name": "TEKKEN 8",
       "appid": 1778820,
       "playerCount": 5123,
+      "isOnSale": null,
+      "discountPercent": null,
       "storeUrl": "https://store.steampowered.com/app/1778820/",
       "runUrl": "steam://run/1778820"
     },
@@ -22,6 +26,8 @@
       "name": "GUILTY GEAR STRIVE",
       "appid": 1384160,
       "playerCount": 1233,
+      "isOnSale": null,
+      "discountPercent": null,
       "storeUrl": "https://store.steampowered.com/app/1384160/",
       "runUrl": "steam://run/1384160"
     },
@@ -30,6 +36,8 @@
       "name": "Granblue Fantasy Versus Rising",
       "appid": 2157560,
       "playerCount": 1173,
+      "isOnSale": null,
+      "discountPercent": null,
       "storeUrl": "https://store.steampowered.com/app/2157560/",
       "runUrl": "steam://run/2157560"
     },
@@ -38,6 +46,8 @@
       "name": "DRAGON BALL FighterZ",
       "appid": 678950,
       "playerCount": 814,
+      "isOnSale": null,
+      "discountPercent": null,
       "storeUrl": "https://store.steampowered.com/app/678950/",
       "runUrl": "steam://run/678950"
     },
@@ -46,6 +56,8 @@
       "name": "Virtua Fighter 5 REVO WS",
       "appid": 3112260,
       "playerCount": 64,
+      "isOnSale": null,
+      "discountPercent": null,
       "storeUrl": "https://store.steampowered.com/app/3112260/",
       "runUrl": "steam://run/3112260"
     },
@@ -54,6 +66,8 @@
       "name": "BlazBlue Centralfiction",
       "appid": 586140,
       "playerCount": 194,
+      "isOnSale": null,
+      "discountPercent": null,
       "storeUrl": "https://store.steampowered.com/app/586140/",
       "runUrl": "steam://run/586140"
     },
@@ -62,6 +76,8 @@
       "name": "KOF XV",
       "appid": 1498570,
       "playerCount": 171,
+      "isOnSale": null,
+      "discountPercent": null,
       "storeUrl": "https://store.steampowered.com/app/1498570/",
       "runUrl": "steam://run/1498570"
     },
@@ -70,6 +86,8 @@
       "name": "SOULCALIBUR VI",
       "appid": 544750,
       "playerCount": 159,
+      "isOnSale": null,
+      "discountPercent": null,
       "storeUrl": "https://store.steampowered.com/app/544750/",
       "runUrl": "steam://run/544750"
     },
@@ -78,6 +96,8 @@
       "name": "FATAL FURY CotW",
       "appid": 2492040,
       "playerCount": 256,
+      "isOnSale": null,
+      "discountPercent": null,
       "storeUrl": "https://store.steampowered.com/app/2492040/",
       "runUrl": "steam://run/2492040"
     },
@@ -86,6 +106,8 @@
       "name": "DEAD OR ALIVE 6",
       "appid": 838380,
       "playerCount": 78,
+      "isOnSale": null,
+      "discountPercent": null,
       "storeUrl": "https://store.steampowered.com/app/838380/",
       "runUrl": "steam://run/838380"
     },
@@ -94,6 +116,8 @@
       "name": "UNDER NIGHT IN-BIRTH II",
       "appid": 2076010,
       "playerCount": 171,
+      "isOnSale": null,
+      "discountPercent": null,
       "storeUrl": "https://store.steampowered.com/app/2076010/",
       "runUrl": "steam://run/2076010"
     },
@@ -102,6 +126,8 @@
       "name": "MELTY BLOOD TYPE LUMINA",
       "appid": 1372280,
       "playerCount": 83,
+      "isOnSale": null,
+      "discountPercent": null,
       "storeUrl": "https://store.steampowered.com/app/1372280/",
       "runUrl": "steam://run/1372280"
     },
@@ -110,6 +136,8 @@
       "name": "SAMURAI SPIRITS",
       "appid": 1342260,
       "playerCount": 5,
+      "isOnSale": null,
+      "discountPercent": null,
       "storeUrl": "https://store.steampowered.com/app/1342260/",
       "runUrl": "steam://run/1342260"
     },
@@ -118,6 +146,8 @@
       "name": "DNF DUEL",
       "appid": 1216060,
       "playerCount": 7,
+      "isOnSale": null,
+      "discountPercent": null,
       "storeUrl": "https://store.steampowered.com/app/1216060/",
       "runUrl": "steam://run/1216060"
     },
@@ -126,6 +156,8 @@
       "name": "HUNTER×HUNTER NEN×IMPACT",
       "appid": 2456420,
       "playerCount": 3,
+      "isOnSale": null,
+      "discountPercent": null,
       "storeUrl": "https://store.steampowered.com/app/2456420/",
       "runUrl": "steam://run/2456420"
     },
@@ -134,6 +166,8 @@
       "name": "Phantom Breaker: Omnia",
       "appid": 1184560,
       "playerCount": 1,
+      "isOnSale": null,
+      "discountPercent": null,
       "storeUrl": "https://store.steampowered.com/app/1184560/",
       "runUrl": "steam://run/1184560"
     },
@@ -142,6 +176,8 @@
       "name": "Killer Instinct",
       "appid": 577940,
       "playerCount": 44,
+      "isOnSale": null,
+      "discountPercent": null,
       "storeUrl": "https://store.steampowered.com/app/577940/",
       "runUrl": "steam://run/577940"
     },
@@ -150,6 +186,8 @@
       "name": "恋姫†演武",
       "appid": 452420,
       "playerCount": 1,
+      "isOnSale": null,
+      "discountPercent": null,
       "storeUrl": "https://store.steampowered.com/app/452420/",
       "runUrl": "steam://run/452420"
     },
@@ -158,6 +196,8 @@
       "name": "カプコン ファイティング コレクション",
       "appid": 1685750,
       "playerCount": 11,
+      "isOnSale": null,
+      "discountPercent": null,
       "storeUrl": "https://store.steampowered.com/app/1685750/",
       "runUrl": "steam://run/1685750"
     },
@@ -166,6 +206,8 @@
       "name": "カプコン ファイティング コレクション2",
       "appid": 2400430,
       "playerCount": 46,
+      "isOnSale": null,
+      "discountPercent": null,
       "storeUrl": "https://store.steampowered.com/app/2400430/",
       "runUrl": "steam://run/2400430"
     }
