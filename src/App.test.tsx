@@ -51,23 +51,20 @@ describe('App', () => {
     expect(await screen.findByText('データの取得に失敗しました (500)')).toBeInTheDocument();
   });
 
-  it('registers auto refresh interval as 60 seconds', async () => {
+  it('does not show manual refresh controls', async () => {
     const fetchMock = vi.fn(async () =>
       new Response(JSON.stringify(okPayload), {
         status: 200,
         headers: { 'Content-Type': 'application/json' },
       }),
     );
-    const setIntervalSpy = vi.spyOn(window, 'setInterval');
     global.fetch = fetchMock as typeof fetch;
 
     render(<App />);
     await screen.findByText('Street Fighter 6');
 
     expect(fetchMock).toHaveBeenCalledTimes(1);
-    expect(setIntervalSpy.mock.calls.length).toBeGreaterThanOrEqual(1);
-
-    const intervalArgs = setIntervalSpy.mock.calls.map((call) => call[1]);
-    expect(intervalArgs).toContain(60_000);
+    expect(screen.queryByRole('button', { name: '今すぐ更新' })).not.toBeInTheDocument();
+    expect(screen.queryByText('自動更新: 60秒ごと')).not.toBeInTheDocument();
   });
 });

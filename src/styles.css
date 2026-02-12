@@ -47,22 +47,6 @@ p {
   text-align: right;
 }
 
-button {
-  margin-top: 8px;
-  border: none;
-  border-radius: 10px;
-  background: #d9a341;
-  color: #1f1f19;
-  font-weight: 700;
-  padding: 8px 12px;
-  cursor: pointer;
-}
-
-button:disabled {
-  opacity: 0.65;
-  cursor: wait;
-}
-
 .table-wrap {
   overflow-x: auto;
 }

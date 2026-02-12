@@ -14,7 +14,6 @@ type PlayerPayload = {
   items: PlayerItem[];
 };
 
-const REFETCH_INTERVAL_MS = 60_000;
 const PLAYERS_ENDPOINT = `${import.meta.env.BASE_URL}data/players.json`;
 
 function formatCount(value: number | null): string {
@@ -42,15 +41,9 @@ export function App() {
   const [payload, setPayload] = useState<PlayerPayload | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [refreshing, setRefreshing] = useState(false);
 
-  const fetchPlayers = useCallback(async (showLoading: boolean) => {
-    if (showLoading) {
-      setLoading(true);
-    } else {
-      setRefreshing(true);
-    }
-
+  const fetchPlayers = useCallback(async () => {
+    setLoading(true);
     setError(null);
 
     try {
@@ -70,20 +63,11 @@ export function App() {
       setError(message);
     } finally {
       setLoading(false);
-      setRefreshing(false);
     }
   }, []);
 
   useEffect(() => {
-    void fetchPlayers(true);
-
-    const timer = window.setInterval(() => {
-      void fetchPlayers(false);
-    }, REFETCH_INTERVAL_MS);
-
-    return () => {
-      window.clearInterval(timer);
-    };
+    void fetchPlayers();
   }, [fetchPlayers]);
 
   const rows = useMemo(() => payload?.items ?? [], [payload]);
@@ -100,14 +84,6 @@ export function App() {
             <p>
               最終更新: {payload ? `${formatJst(payload.updatedAt)} JST` : '--'}
             </p>
-            <p>自動更新: 60秒ごと</p>
-            <button
-              type="button"
-              onClick={() => void fetchPlayers(false)}
-              disabled={loading || refreshing}
-            >
-              {refreshing ? '更新中...' : '今すぐ更新'}
-            </button>
           </div>
         </header>
 
