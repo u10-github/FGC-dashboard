@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-02-12T00:05:15.624Z",
+  "updatedAt": "2026-02-12T01:00:50.886Z",
   "items": [
     {
       "id": "street-fighter-6",
       "name": "Street Fighter 6",
       "appid": 1364780,
-      "playerCount": 7153,
+      "playerCount": 8114,
       "storeUrl": "https://store.steampowered.com/app/1364780/",
       "runUrl": "steam://run/1364780"
     },
@@ -13,7 +13,7 @@
       "id": "tekken-8",
       "name": "TEKKEN 8",
       "appid": 1778820,
-      "playerCount": 5138,
+      "playerCount": 5123,
       "storeUrl": "https://store.steampowered.com/app/1778820/",
       "runUrl": "steam://run/1778820"
     },
@@ -21,7 +21,7 @@
       "id": "guilty-gear-strive",
       "name": "GUILTY GEAR STRIVE",
       "appid": 1384160,
-      "playerCount": 1120,
+      "playerCount": 1233,
       "storeUrl": "https://store.steampowered.com/app/1384160/",
       "runUrl": "steam://run/1384160"
     },
@@ -29,7 +29,7 @@
       "id": "granblue-fantasy-versus-rising",
       "name": "Granblue Fantasy Versus Rising",
       "appid": 2157560,
-      "playerCount": 1129,
+      "playerCount": 1173,
       "storeUrl": "https://store.steampowered.com/app/2157560/",
       "runUrl": "steam://run/2157560"
     },
@@ -37,7 +37,7 @@
       "id": "dragon-ball-fighterz",
       "name": "DRAGON BALL FighterZ",
       "appid": 678950,
-      "playerCount": 754,
+      "playerCount": 814,
       "storeUrl": "https://store.steampowered.com/app/678950/",
       "runUrl": "steam://run/678950"
     },
@@ -45,7 +45,7 @@
       "id": "virtua-fighter-5-revo-ws",
       "name": "Virtua Fighter 5 REVO WS",
       "appid": 3112260,
-      "playerCount": 72,
+      "playerCount": 64,
       "storeUrl": "https://store.steampowered.com/app/3112260/",
       "runUrl": "steam://run/3112260"
     },
@@ -53,7 +53,7 @@
       "id": "blazblue-centralfiction",
       "name": "BlazBlue Centralfiction",
       "appid": 586140,
-      "playerCount": 185,
+      "playerCount": 194,
       "storeUrl": "https://store.steampowered.com/app/586140/",
       "runUrl": "steam://run/586140"
     },
@@ -61,7 +61,7 @@
       "id": "kof-xv",
       "name": "KOF XV",
       "appid": 1498570,
-      "playerCount": 153,
+      "playerCount": 171,
       "storeUrl": "https://store.steampowered.com/app/1498570/",
       "runUrl": "steam://run/1498570"
     },
@@ -77,7 +77,7 @@
       "id": "fatal-fury-cotw",
       "name": "FATAL FURY CotW",
       "appid": 2492040,
-      "playerCount": 237,
+      "playerCount": 256,
       "storeUrl": "https://store.steampowered.com/app/2492040/",
       "runUrl": "steam://run/2492040"
     },
@@ -85,7 +85,7 @@
       "id": "dead-or-alive-6",
       "name": "DEAD OR ALIVE 6",
       "appid": 838380,
-      "playerCount": 64,
+      "playerCount": 78,
       "storeUrl": "https://store.steampowered.com/app/838380/",
       "runUrl": "steam://run/838380"
     },
@@ -93,7 +93,7 @@
       "id": "under-night-in-birth-ii",
       "name": "UNDER NIGHT IN-BIRTH II",
       "appid": 2076010,
-      "playerCount": 142,
+      "playerCount": 171,
       "storeUrl": "https://store.steampowered.com/app/2076010/",
       "runUrl": "steam://run/2076010"
     },
@@ -101,7 +101,7 @@
       "id": "melty-blood-type-lumina",
       "name": "MELTY BLOOD TYPE LUMINA",
       "appid": 1372280,
-      "playerCount": 75,
+      "playerCount": 83,
       "storeUrl": "https://store.steampowered.com/app/1372280/",
       "runUrl": "steam://run/1372280"
     },
@@ -125,9 +125,49 @@
       "id": "hunter-hunter-nen-impact",
       "name": "HUNTER×HUNTER NEN×IMPACT",
       "appid": 2456420,
-      "playerCount": 2,
+      "playerCount": 3,
       "storeUrl": "https://store.steampowered.com/app/2456420/",
       "runUrl": "steam://run/2456420"
+    },
+    {
+      "id": "phantom-breaker-omnia",
+      "name": "Phantom Breaker: Omnia",
+      "appid": 1184560,
+      "playerCount": 1,
+      "storeUrl": "https://store.steampowered.com/app/1184560/",
+      "runUrl": "steam://run/1184560"
+    },
+    {
+      "id": "killer-instinct",
+      "name": "Killer Instinct",
+      "appid": 577940,
+      "playerCount": 44,
+      "storeUrl": "https://store.steampowered.com/app/577940/",
+      "runUrl": "steam://run/577940"
+    },
+    {
+      "id": "koihime-enbu",
+      "name": "恋姫†演武",
+      "appid": 452420,
+      "playerCount": 1,
+      "storeUrl": "https://store.steampowered.com/app/452420/",
+      "runUrl": "steam://run/452420"
+    },
+    {
+      "id": "capcom-fighting-collection",
+      "name": "カプコン ファイティング コレクション",
+      "appid": 1685750,
+      "playerCount": 11,
+      "storeUrl": "https://store.steampowered.com/app/1685750/",
+      "runUrl": "steam://run/1685750"
+    },
+    {
+      "id": "capcom-fighting-collection-2",
+      "name": "カプコン ファイティング コレクション2",
+      "appid": 2400430,
+      "playerCount": 46,
+      "storeUrl": "https://store.steampowered.com/app/2400430/",
+      "runUrl": "steam://run/2400430"
     }
   ]
 }

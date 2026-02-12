@@ -14,5 +14,10 @@
   { "id": "melty-blood-type-lumina", "name": "MELTY BLOOD TYPE LUMINA", "appid": 1372280, "enabled": true },
   { "id": "samurai-spirits", "name": "SAMURAI SPIRITS", "appid": 1342260, "enabled": true },
   { "id": "dnf-duel", "name": "DNF DUEL", "appid": 1216060, "enabled": true },
-  { "id": "hunter-hunter-nen-impact", "name": "HUNTER×HUNTER NEN×IMPACT", "appid": 2456420, "enabled": true }
+  { "id": "hunter-hunter-nen-impact", "name": "HUNTER×HUNTER NEN×IMPACT", "appid": 2456420, "enabled": true },
+  { "id": "phantom-breaker-omnia", "name": "Phantom Breaker: Omnia", "appid": 1184560, "enabled": true },
+  { "id": "killer-instinct", "name": "Killer Instinct", "appid": 577940, "enabled": true },
+  { "id": "koihime-enbu", "name": "恋姫†演武", "appid": 452420, "enabled": true },
+  { "id": "capcom-fighting-collection", "name": "カプコン ファイティング コレクション", "appid": 1685750, "enabled": true },
+  { "id": "capcom-fighting-collection-2", "name": "カプコン ファイティング コレクション2", "appid": 2400430, "enabled": true }
 ]
