@@ -28,7 +28,7 @@ describe('App', () => {
     global.fetch = originalFetch;
   });
 
-  it('renders title, count and store link when fetch succeeds', async () => {
+  it('renders title as store link and count when fetch succeeds', async () => {
     global.fetch = vi.fn(async () =>
       new Response(JSON.stringify(okPayload), {
         status: 200,
@@ -38,15 +38,28 @@ describe('App', () => {
 
     render(<App />);
 
-    expect(await screen.findByText('Street Fighter 6')).toBeInTheDocument();
+    expect(await screen.findByRole('link', { name: 'Street Fighter 6' })).toBeInTheDocument();
     expect(screen.getByText('30,905')).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: 'Store' })).toHaveAttribute(
+    expect(screen.getByRole('link', { name: 'Street Fighter 6' })).toHaveAttribute(
       'href',
       'https://store.steampowered.com/app/1364780/',
     );
     expect(screen.getByText('SALE -35%')).toBeInTheDocument();
   });
 
+  it('shows two columns without Store column', async () => {
+    global.fetch = vi.fn(async () =>
+      new Response(JSON.stringify(okPayload), {
+        status: 200,
+        headers: { 'Content-Type': 'application/json' },
+      }),
+    ) as typeof fetch;
+
+    render(<App />);
+
+    expect(await screen.findByText('同接数')).toBeInTheDocument();
+    expect(screen.queryByText('ストア')).not.toBeInTheDocument();
+  });
   it('highlights rows when game is on sale', async () => {
     global.fetch = vi.fn(async () =>
       new Response(JSON.stringify(okPayload), {

@@ -97,8 +97,7 @@ export function App() {
             <thead>
               <tr>
                 <th>タイトル</th>
-                <th>プレイ中人数</th>
-                <th>ストア</th>
+                <th>同接数</th>
               </tr>
             </thead>
             <tbody>
@@ -106,21 +105,18 @@ export function App() {
                 return (
                   <tr key={item.id} className={item.isOnSale ? 'sale-row' : undefined}>
                     <td>
-                      <span>{item.name}</span>
+                      {item.storeUrl ? (
+                        <a href={item.storeUrl} target="_blank" rel="noreferrer" className="title-link">
+                          {item.name}
+                        </a>
+                      ) : (
+                        <span>{item.name}</span>
+                      )}
                       {item.isOnSale ? (
                         <span className="sale-badge">SALE -{item.discountPercent ?? 0}%</span>
                       ) : null}
                     </td>
                     <td className="count">{formatCount(item.playerCount)}</td>
-                    <td>
-                      {item.storeUrl ? (
-                        <a href={item.storeUrl} target="_blank" rel="noreferrer">
-                          Store
-                        </a>
-                      ) : (
-                        <span className="muted">AppID未設定</span>
-                      )}
-                    </td>
                   </tr>
                 );
               })}
