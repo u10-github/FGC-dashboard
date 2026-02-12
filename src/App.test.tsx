@@ -47,7 +47,6 @@ describe('App', () => {
     expect(screen.getByText('SALE -35%')).toBeInTheDocument();
   });
 
-
   it('shows two columns without Store column', async () => {
     global.fetch = vi.fn(async () =>
       new Response(JSON.stringify(okPayload), {
