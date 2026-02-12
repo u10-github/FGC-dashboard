@@ -120,7 +120,6 @@ export function App() {
               <tr>
                 <th>タイトル</th>
                 <th>プレイ中人数</th>
-                <th>起動</th>
                 <th>ストア</th>
               </tr>
             </thead>
@@ -130,13 +129,6 @@ export function App() {
                   <tr key={item.id}>
                     <td>{item.name}</td>
                     <td className="count">{formatCount(item.playerCount)}</td>
-                    <td>
-                      {item.runUrl ? (
-                        <a href={item.runUrl}>起動</a>
-                      ) : (
-                        <span className="muted">AppID未設定</span>
-                      )}
-                    </td>
                     <td>
                       {item.storeUrl ? (
                         <a href={item.storeUrl} target="_blank" rel="noreferrer">

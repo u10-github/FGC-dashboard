@@ -25,7 +25,7 @@ describe('App', () => {
     global.fetch = originalFetch;
   });
 
-  it('renders title, count and links when fetch succeeds', async () => {
+  it('renders title, count and store link when fetch succeeds', async () => {
     global.fetch = vi.fn(async () =>
       new Response(JSON.stringify(okPayload), {
         status: 200,
@@ -37,7 +37,6 @@ describe('App', () => {
 
     expect(await screen.findByText('Street Fighter 6')).toBeInTheDocument();
     expect(screen.getByText('30,905')).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: '起動' })).toHaveAttribute('href', 'steam://run/1364780');
     expect(screen.getByRole('link', { name: 'Store' })).toHaveAttribute(
       'href',
       'https://store.steampowered.com/app/1364780/',
