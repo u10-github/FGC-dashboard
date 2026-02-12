@@ -2,14 +2,14 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-type Game = {
+export type Game = {
   id: string;
   name: string;
   appid: number | null;
   enabled: boolean;
 };
 
-type PlayerItem = {
+export type PlayerItem = {
   id: string;
   name: string;
   appid: number | null;
@@ -18,10 +18,12 @@ type PlayerItem = {
   runUrl: string | null;
 };
 
-type PlayerPayload = {
+export type PlayerPayload = {
   updatedAt: string;
   items: PlayerItem[];
 };
+
+type PlayerFetcher = (appid: number) => Promise<number>;
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -34,7 +36,7 @@ async function readJson<T>(filepath: string): Promise<T> {
   return JSON.parse(raw) as T;
 }
 
-async function getCurrentPlayers(appid: number): Promise<number> {
+export async function getCurrentPlayers(appid: number): Promise<number> {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 10000);
   try {
@@ -58,7 +60,7 @@ async function getCurrentPlayers(appid: number): Promise<number> {
   }
 }
 
-function toLinkData(appid: number | null): Pick<PlayerItem, 'storeUrl' | 'runUrl'> {
+export function toLinkData(appid: number | null): Pick<PlayerItem, 'storeUrl' | 'runUrl'> {
   if (!appid) {
     return { storeUrl: null, runUrl: null };
   }
@@ -68,17 +70,12 @@ function toLinkData(appid: number | null): Pick<PlayerItem, 'storeUrl' | 'runUrl
   };
 }
 
-async function main(): Promise<void> {
-  const games = await readJson<Game[]>(gamesPath);
-
-  let previousMap = new Map<string, number | null>();
-  try {
-    const previous = await readJson<PlayerPayload>(playersPath);
-    previousMap = new Map(previous.items.map((item) => [item.id, item.playerCount]));
-  } catch {
-    previousMap = new Map();
-  }
-
+export async function buildPlayerPayload(
+  games: Game[],
+  previous: PlayerPayload | null,
+  fetcher: PlayerFetcher,
+): Promise<PlayerPayload> {
+  const previousMap = new Map(previous?.items.map((item) => [item.id, item.playerCount]) ?? []);
   const items: PlayerItem[] = [];
 
   for (const game of games) {
@@ -96,7 +93,7 @@ async function main(): Promise<void> {
     }
 
     try {
-      const playerCount = await getCurrentPlayers(game.appid);
+      const playerCount = await fetcher(game.appid);
       items.push({
         id: game.id,
         name: game.name,
@@ -117,18 +114,32 @@ async function main(): Promise<void> {
     }
   }
 
-  const payload: PlayerPayload = {
+  return {
     updatedAt: new Date().toISOString(),
     items,
   };
+}
 
+export async function run(): Promise<void> {
+  const games = await readJson<Game[]>(gamesPath);
+
+  let previous: PlayerPayload | null = null;
+  try {
+    previous = await readJson<PlayerPayload>(playersPath);
+  } catch {
+    previous = null;
+  }
+
+  const payload = await buildPlayerPayload(games, previous, getCurrentPlayers);
   await mkdir(path.dirname(playersPath), { recursive: true });
   await writeFile(playersPath, `${JSON.stringify(payload, null, 2)}\n`, 'utf8');
 
-  console.log(`Wrote ${items.length} items to ${path.relative(repoRoot, playersPath)}`);
+  console.log(`Wrote ${payload.items.length} items to ${path.relative(repoRoot, playersPath)}`);
 }
 
-main().catch((error) => {
-  console.error(error);
-  process.exitCode = 1;
-});
+if (path.resolve(process.argv[1] ?? '') === __filename) {
+  run().catch((error) => {
+    console.error(error);
+    process.exitCode = 1;
+  });
+}

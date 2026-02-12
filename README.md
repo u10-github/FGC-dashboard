@@ -14,6 +14,23 @@ npm run dev
 - `public/data/players.json`: 取得スクリプトの出力
 - `scripts/fetch-steam-players.ts`: Steam APIから人数を取得
 
+## 再起テスト（回帰テスト）
+
+```bash
+npm test
+```
+
+テストケース:
+
+- `scripts/fetch-steam-players.test.ts`
+  - `appid` あり/なしでリンク生成が正しい
+  - `games.json` の固定順で `players.json` を生成する
+  - API失敗時に前回 `players.json` の人数へフォールバックする
+- `src/App.test.tsx`
+  - 一覧・人数・起動/Storeリンクを描画する
+  - 取得失敗時にエラーメッセージを表示する
+  - 60秒間隔の自動更新タイマーを登録する
+
 ## デプロイ（GitHub Pages）
 
 - `main` へのpush
