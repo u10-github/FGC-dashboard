@@ -74,6 +74,26 @@ th {
   font-weight: 700;
 }
 
+
+.sale-row {
+  background: rgba(255, 185, 78, 0.1);
+}
+
+.sale-row td {
+  border-bottom-color: #7b6440;
+}
+
+.sale-badge {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #ffb84e;
+  color: #2e220b;
+  font-weight: 700;
+  font-size: 0.78rem;
+}
+
 a {
   color: #88c9ff;
   text-decoration: none;

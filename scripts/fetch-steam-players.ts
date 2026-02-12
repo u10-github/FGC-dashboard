@@ -9,11 +9,18 @@ export type Game = {
   enabled: boolean;
 };
 
+export type SaleInfo = {
+  isOnSale: boolean;
+  discountPercent: number;
+};
+
 export type PlayerItem = {
   id: string;
   name: string;
   appid: number | null;
   playerCount: number | null;
+  isOnSale: boolean | null;
+  discountPercent: number | null;
   storeUrl: string | null;
   runUrl: string | null;
 };
@@ -24,6 +31,7 @@ export type PlayerPayload = {
 };
 
 type PlayerFetcher = (appid: number) => Promise<number>;
+type SaleFetcher = (appid: number) => Promise<SaleInfo>;
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -60,6 +68,49 @@ export async function getCurrentPlayers(appid: number): Promise<number> {
   }
 }
 
+export async function getSaleInfo(appid: number): Promise<SaleInfo> {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 10000);
+  try {
+    const res = await fetch(`https://store.steampowered.com/api/appdetails?appids=${appid}&cc=JP&l=japanese`, {
+      signal: controller.signal,
+    });
+    if (!res.ok) {
+      throw new Error(`Steam Store API error (${res.status})`);
+    }
+
+    const body = (await res.json()) as Record<
+      string,
+      {
+        success?: boolean;
+        data?: {
+          is_free?: boolean;
+          price_overview?: {
+            discount_percent?: number;
+          };
+        };
+      }
+    >;
+
+    const app = body[String(appid)];
+    if (!app?.success || !app.data) {
+      throw new Error('Steam Store API response missing data');
+    }
+
+    const discountPercent = app.data.price_overview?.discount_percent ?? 0;
+    if (typeof discountPercent !== 'number') {
+      throw new Error('Steam Store API response missing discount_percent');
+    }
+
+    return {
+      isOnSale: discountPercent > 0,
+      discountPercent,
+    };
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
 export function toLinkData(appid: number | null): Pick<PlayerItem, 'storeUrl' | 'runUrl'> {
   if (!appid) {
     return { storeUrl: null, runUrl: null };
@@ -74,8 +125,9 @@ export async function buildPlayerPayload(
   games: Game[],
   previous: PlayerPayload | null,
   fetcher: PlayerFetcher,
+  saleFetcher: SaleFetcher,
 ): Promise<PlayerPayload> {
-  const previousMap = new Map(previous?.items.map((item) => [item.id, item.playerCount]) ?? []);
+  const previousMap = new Map(previous?.items.map((item) => [item.id, item]) ?? []);
   const items: PlayerItem[] = [];
 
   for (const game of games) {
@@ -87,31 +139,45 @@ export async function buildPlayerPayload(
         name: game.name,
         appid: game.appid,
         playerCount: null,
+        isOnSale: null,
+        discountPercent: null,
         ...linkData,
       });
       continue;
     }
 
+    let playerCount: number | null = null;
     try {
-      const playerCount = await fetcher(game.appid);
-      items.push({
-        id: game.id,
-        name: game.name,
-        appid: game.appid,
-        playerCount,
-        ...linkData,
-      });
+      playerCount = await fetcher(game.appid);
     } catch (error) {
-      const fallback = previousMap.get(game.id) ?? null;
+      const fallback = previousMap.get(game.id)?.playerCount ?? null;
       console.warn(`Failed to fetch appid=${game.appid}:`, error);
-      items.push({
-        id: game.id,
-        name: game.name,
-        appid: game.appid,
-        playerCount: fallback,
-        ...linkData,
-      });
+      playerCount = fallback;
     }
+
+    let isOnSale: boolean | null = null;
+    let discountPercent: number | null = null;
+
+    try {
+      const saleInfo = await saleFetcher(game.appid);
+      isOnSale = saleInfo.isOnSale;
+      discountPercent = saleInfo.discountPercent;
+    } catch (error) {
+      const previousItem = previousMap.get(game.id);
+      isOnSale = previousItem?.isOnSale ?? null;
+      discountPercent = previousItem?.discountPercent ?? null;
+      console.warn(`Failed to fetch sale info appid=${game.appid}:`, error);
+    }
+
+    items.push({
+      id: game.id,
+      name: game.name,
+      appid: game.appid,
+      playerCount,
+      isOnSale,
+      discountPercent,
+      ...linkData,
+    });
   }
 
   return {
@@ -130,7 +196,7 @@ export async function run(): Promise<void> {
     previous = null;
   }
 
-  const payload = await buildPlayerPayload(games, previous, getCurrentPlayers);
+  const payload = await buildPlayerPayload(games, previous, getCurrentPlayers, getSaleInfo);
   await mkdir(path.dirname(playersPath), { recursive: true });
   await writeFile(playersPath, `${JSON.stringify(payload, null, 2)}\n`, 'utf8');
 

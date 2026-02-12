@@ -5,6 +5,8 @@ type PlayerItem = {
   name: string;
   appid: number | null;
   playerCount: number | null;
+  isOnSale: boolean | null;
+  discountPercent: number | null;
   storeUrl: string | null;
   runUrl: string | null;
 };
@@ -102,8 +104,13 @@ export function App() {
             <tbody>
               {rows.map((item) => {
                 return (
-                  <tr key={item.id}>
-                    <td>{item.name}</td>
+                  <tr key={item.id} className={item.isOnSale ? 'sale-row' : undefined}>
+                    <td>
+                      <span>{item.name}</span>
+                      {item.isOnSale ? (
+                        <span className="sale-badge">SALE -{item.discountPercent ?? 0}%</span>
+                      ) : null}
+                    </td>
                     <td className="count">{formatCount(item.playerCount)}</td>
                     <td>
                       {item.storeUrl ? (
