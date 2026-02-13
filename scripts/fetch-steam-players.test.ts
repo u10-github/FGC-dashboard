@@ -75,3 +75,18 @@ describe('buildPlayerPayload', () => {
     expect(payload.items[0].discountPercent).toBe(35);
   });
 });
+
+
+describe('games catalog integrity', () => {
+  it('uses the correct appid for AQUAPAZZA: Aquaplus Dream Match', async () => {
+    const { readFile } = await import('node:fs/promises');
+    const { resolve } = await import('node:path');
+    const gamesPath = resolve(process.cwd(), 'public/data/games.json');
+
+    const games = JSON.parse(await readFile(gamesPath, 'utf8')) as Game[];
+    const aquapazza = games.find((game) => game.id === 'aquapazza-aquaplus-dream-match');
+
+    expect(aquapazza).toBeTruthy();
+    expect(aquapazza?.appid).toBe(3229260);
+  });
+});
