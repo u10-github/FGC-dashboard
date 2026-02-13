@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-02-12T03:32:04.428Z",
+  "updatedAt": "2026-02-13T01:57:49.096Z",
   "items": [
     {
       "id": "street-fighter-6",
@@ -188,7 +188,7 @@
       "playerCount": 1,
       "isOnSale": null,
       "discountPercent": null,
-      "storeUrl": "https://store.steampowered.com/app/795510/_/",
+      "storeUrl": "https://store.steampowered.com/app/795510/",
       "runUrl": "steam://run/795510"
     },
     {
@@ -210,6 +210,86 @@
       "discountPercent": null,
       "storeUrl": "https://store.steampowered.com/app/2400430/",
       "runUrl": "steam://run/2400430"
+    },
+    {
+      "id": "aquapazza-aquaplus-dream-match",
+      "name": "AQUAPAZZA: Aquaplus Dream Match",
+      "appid": 336570,
+      "playerCount": null,
+      "isOnSale": null,
+      "discountPercent": null,
+      "storeUrl": "https://store.steampowered.com/app/336570/",
+      "runUrl": "steam://run/336570"
+    },
+    {
+      "id": "persona-4-arena-ultimax",
+      "name": "Persona 4 Arena Ultimax",
+      "appid": 1602010,
+      "playerCount": null,
+      "isOnSale": null,
+      "discountPercent": null,
+      "storeUrl": "https://store.steampowered.com/app/1602010/",
+      "runUrl": "steam://run/1602010"
+    },
+    {
+      "id": "street-fighter-v",
+      "name": "Street Fighter V",
+      "appid": 310950,
+      "playerCount": null,
+      "isOnSale": null,
+      "discountPercent": null,
+      "storeUrl": "https://store.steampowered.com/app/310950/",
+      "runUrl": "steam://run/310950"
+    },
+    {
+      "id": "tekken-7",
+      "name": "TEKKEN 7",
+      "appid": 389730,
+      "playerCount": null,
+      "isOnSale": null,
+      "discountPercent": null,
+      "storeUrl": "https://store.steampowered.com/app/389730/",
+      "runUrl": "steam://run/389730"
+    },
+    {
+      "id": "ultimate-marvel-vs-capcom-3",
+      "name": "ULTIMATE MARVEL VS. CAPCOM 3",
+      "appid": 357190,
+      "playerCount": null,
+      "isOnSale": null,
+      "discountPercent": null,
+      "storeUrl": "https://store.steampowered.com/app/357190/",
+      "runUrl": "steam://run/357190"
+    },
+    {
+      "id": "guilty-gear-xrd-rev-2",
+      "name": "GUILTY GEAR Xrd REV 2",
+      "appid": 520440,
+      "playerCount": null,
+      "isOnSale": null,
+      "discountPercent": null,
+      "storeUrl": "https://store.steampowered.com/app/520440/",
+      "runUrl": "steam://run/520440"
+    },
+    {
+      "id": "guilty-gear-xx-accent-core-plus-r",
+      "name": "GUILTY GEAR XX ACCENT CORE PLUS R",
+      "appid": 348550,
+      "playerCount": null,
+      "isOnSale": null,
+      "discountPercent": null,
+      "storeUrl": "https://store.steampowered.com/app/348550/",
+      "runUrl": "steam://run/348550"
+    },
+    {
+      "id": "guilty-gear-2-overture",
+      "name": "GUILTY GEAR 2 -OVERTURE-",
+      "appid": 437000,
+      "playerCount": null,
+      "isOnSale": null,
+      "discountPercent": null,
+      "storeUrl": "https://store.steampowered.com/app/437000/",
+      "runUrl": "steam://run/437000"
     }
   ]
 }

@@ -19,5 +19,13 @@
   { "id": "killer-instinct", "name": "Killer Instinct", "appid": 577940, "enabled": true },
   { "id": "koihime-enbu-ryorairai", "name": "恋姫†演武 ～遼来来～", "appid": 795510, "enabled": true },
   { "id": "capcom-fighting-collection", "name": "カプコン ファイティング コレクション", "appid": 1685750, "enabled": true },
-  { "id": "capcom-fighting-collection-2", "name": "カプコン ファイティング コレクション2", "appid": 2400430, "enabled": true }
+  { "id": "capcom-fighting-collection-2", "name": "カプコン ファイティング コレクション2", "appid": 2400430, "enabled": true },
+  { "id": "aquapazza-aquaplus-dream-match", "name": "AQUAPAZZA: Aquaplus Dream Match", "appid": 336570, "enabled": true },
+  { "id": "persona-4-arena-ultimax", "name": "Persona 4 Arena Ultimax", "appid": 1602010, "enabled": true },
+  { "id": "street-fighter-v", "name": "Street Fighter V", "appid": 310950, "enabled": true },
+  { "id": "tekken-7", "name": "TEKKEN 7", "appid": 389730, "enabled": true },
+  { "id": "ultimate-marvel-vs-capcom-3", "name": "ULTIMATE MARVEL VS. CAPCOM 3", "appid": 357190, "enabled": true },
+  { "id": "guilty-gear-xrd-rev-2", "name": "GUILTY GEAR Xrd REV 2", "appid": 520440, "enabled": true },
+  { "id": "guilty-gear-xx-accent-core-plus-r", "name": "GUILTY GEAR XX ACCENT CORE PLUS R", "appid": 348550, "enabled": true },
+  { "id": "guilty-gear-2-overture", "name": "GUILTY GEAR 2 -OVERTURE-", "appid": 437000, "enabled": true }
 ]
