@@ -89,4 +89,46 @@ describe('games catalog integrity', () => {
     expect(aquapazza).toBeTruthy();
     expect(aquapazza?.appid).toBe(3229260);
   });
+
+  it('uses the correct appid for Arcana Heart 3 LOVEMAX SIXSTARS XTEND', async () => {
+    const { readFile } = await import('node:fs/promises');
+    const { resolve } = await import('node:path');
+    const gamesPath = resolve(process.cwd(), 'public/data/games.json');
+
+    const games = JSON.parse(await readFile(gamesPath, 'utf8')) as Game[];
+    const arcanaHeart = games.find((game) => game.id === 'arcana-heart-3-lovemax-sixstars-xtend');
+
+    expect(arcanaHeart).toBeTruthy();
+    expect(arcanaHeart?.appid).toBe(661990);
+  });
+
+
+  it('keeps requested ordering around newly added titles', async () => {
+    const { readFile } = await import('node:fs/promises');
+    const { resolve } = await import('node:path');
+    const gamesPath = resolve(process.cwd(), 'public/data/games.json');
+
+    const games = JSON.parse(await readFile(gamesPath, 'utf8')) as Game[];
+    const ids = games.map((game) => game.id);
+
+    expect(ids.indexOf('blazblue-centralfiction')).toBeLessThan(ids.indexOf('blazblue-cross-tag-battle'));
+    expect(ids.indexOf('blazblue-cross-tag-battle')).toBeLessThan(ids.indexOf('kof-xv'));
+    expect(ids.indexOf('aquapazza-aquaplus-dream-match')).toBeLessThan(
+      ids.indexOf('arcana-heart-3-lovemax-sixstars-xtend'),
+    );
+    expect(ids.indexOf('arcana-heart-3-lovemax-sixstars-xtend')).toBeLessThan(
+      ids.indexOf('persona-4-arena-ultimax'),
+    );
+  });
+  it('uses the correct appid for BlazBlue Cross Tag Battle', async () => {
+    const { readFile } = await import('node:fs/promises');
+    const { resolve } = await import('node:path');
+    const gamesPath = resolve(process.cwd(), 'public/data/games.json');
+
+    const games = JSON.parse(await readFile(gamesPath, 'utf8')) as Game[];
+    const bbtag = games.find((game) => game.id === 'blazblue-cross-tag-battle');
+
+    expect(bbtag).toBeTruthy();
+    expect(bbtag?.appid).toBe(702890);
+  });
 });

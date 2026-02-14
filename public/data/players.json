@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-02-13T01:57:49.096Z",
+  "updatedAt": "2026-02-14T00:36:02.937Z",
   "items": [
     {
       "id": "street-fighter-6",
@@ -70,6 +70,16 @@
       "discountPercent": null,
       "storeUrl": "https://store.steampowered.com/app/586140/",
       "runUrl": "steam://run/586140"
+    },
+    {
+      "id": "blazblue-cross-tag-battle",
+      "name": "BlazBlue Cross Tag Battle",
+      "appid": 702890,
+      "playerCount": null,
+      "isOnSale": null,
+      "discountPercent": null,
+      "storeUrl": "https://store.steampowered.com/app/702890/",
+      "runUrl": "steam://run/702890"
     },
     {
       "id": "kof-xv",
@@ -220,6 +230,16 @@
       "discountPercent": null,
       "storeUrl": "https://store.steampowered.com/app/3229260/",
       "runUrl": "steam://run/3229260"
+    },
+    {
+      "id": "arcana-heart-3-lovemax-sixstars-xtend",
+      "name": "Arcana Heart 3 LOVEMAX SIXSTARS XTEND",
+      "appid": 661990,
+      "playerCount": null,
+      "isOnSale": null,
+      "discountPercent": null,
+      "storeUrl": "https://store.steampowered.com/app/661990/",
+      "runUrl": "steam://run/661990"
     },
     {
       "id": "persona-4-arena-ultimax",
