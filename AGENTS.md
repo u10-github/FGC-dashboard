@@ -42,3 +42,9 @@
 - 完了条件（運用）: すべてのタスクで `skill-run-logger` 記録を必須とする。未記録のまま完了報告/コミット/PR作成をしない。
 - 最終報告には `task_id/result/evidence` の記録要約を必ず含める。
 - 参照: `ops/skills-observability/README.md`
+
+## HARNESS-SSOT-BEGIN
+- SSoT: `doc/DoD.md` `doc/evals.md` `doc/runbook.md`
+- 各PRでS1-S3（聖域）影響判定を必須化する。
+- インシデント対応では `doc/runbook.md` + `doc/evals.md`（必要なら `doc/DoD.md`）を同PRで更新する。
+## HARNESS-SSOT-END
