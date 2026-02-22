@@ -23,6 +23,13 @@ jobs:
         run: {INSTALL_CMD}
       - name: テスト
         run: {TEST_CMD}
+      - name: arch_guard（存在する場合）
+        run: |
+          if [ -x ./scripts/arch_guard.sh ]; then
+            ./scripts/arch_guard.sh
+          else
+            echo "arch_guard not found, skip"
+          fi
       - name: ビルド
         run: {BUILD_CMD}
 

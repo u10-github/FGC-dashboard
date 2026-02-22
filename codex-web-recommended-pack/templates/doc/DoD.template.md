@@ -15,6 +15,8 @@
 - [ ] テスト期待値が変わる場合、`doc/evals.md` が同期されている。
 - [ ] 運用/復旧手順が変わる場合、`doc/runbook.md` が同期されている。
 - [ ] PRのCI（`test` + `build`）が成功している。
+- [ ] `./scripts/arch_guard.sh` が成功している。
+- [ ] Core変更時は `docs/arch/core-change.md` と契約テスト（`tests/contract/`）を同一PRで更新している。
 - [ ] PR本文にロールバック手順がある。
 
 ## ガードレール

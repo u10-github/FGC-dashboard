@@ -4,11 +4,16 @@
 
 ## 含めたもの
 - `AGENTS.md`
+- `agents/base/AGENT.md`
 - `doc/how-to-apply-harness-kit.md`
+- `scripts/arch_guard.sh`
 - `templates/`
   - `templates/doc/DoD.template.md`
   - `templates/doc/evals.template.md`
   - `templates/doc/runbook.template.md`
+  - `templates/docs/arch/README.template.md`
+  - `templates/docs/arch/core-change.template.md`
+  - `templates/tests/contract/README.template.md`
   - `templates/.github/pull_request_template.md`
   - `templates/.github/workflows/ci.node.template.yml`
   - `templates/AGENTS.harness.template.md`
@@ -22,6 +27,8 @@
   - `skill-run-logger`
   - `skill-run-validator`
   - `task-close-checklist`
+  - `arch_guard`
+  - `core-extensions-bootstrap`
   - `skill-harness-bootstrap`
   - `skill-harness-grow`
   - `skill-incident-to-harness`

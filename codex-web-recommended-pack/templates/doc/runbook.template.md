@@ -32,6 +32,11 @@
 - [ ] 必要に応じてS1-S3のスモークフローを手動確認
 - [ ] 監視/ログのベースラインを確認
 
+### arch_guard失敗時の対処
+- 依存方向エラー: coreからadapter/extension importを除去し、port経由へ分離する。
+- I/O混入エラー: env/time/http/fsアクセスをextensionsへ移し、coreには値注入する。
+- Core変更時不足: `docs/arch/core-change.md` と `tests/contract/` の更新を追加する。
+
 ### ロールバック
 - トリガー: {ROLLBACK_TRIGGER}
 - 手順:

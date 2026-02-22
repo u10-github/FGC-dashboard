@@ -16,6 +16,11 @@
 - [ ] `doc/runbook.md` を確認
 - [ ] 必要なドキュメントをこのPRで更新、または「更新不要」の理由を記載
 
+## Core&Extensionsチェック（必須）
+- [ ] coreを変更していない
+- [ ] coreを変更した場合、理由/影響範囲/契約テスト更新/回帰結果/`docs/arch/core-change.md` 更新を記載
+- [ ] `./scripts/arch_guard.sh` 実行結果を記載
+
 ## テスト / 検証
 - CI: `test` + `build`
 - 証跡:

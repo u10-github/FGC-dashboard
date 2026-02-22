@@ -5,6 +5,10 @@
 - `doc/DoD.md`
 - `doc/evals.md`
 - `doc/runbook.md`
+- `docs/arch/README.md`
+- `docs/arch/core-change.md`
+- `tests/contract/README.md`
+- `scripts/arch_guard.sh`
 - PR gate (`test` + `build`)
 - Sacred Zones (S1-S3)
 
@@ -13,9 +17,13 @@
    - `templates/doc/DoD.template.md` -> `doc/DoD.md`
    - `templates/doc/evals.template.md` -> `doc/evals.md`
    - `templates/doc/runbook.template.md` -> `doc/runbook.md`
+   - `templates/docs/arch/README.template.md` -> `docs/arch/README.md`
+   - `templates/docs/arch/core-change.template.md` -> `docs/arch/core-change.md`
+   - `templates/tests/contract/README.template.md` -> `tests/contract/README.md`
    - `templates/.github/pull_request_template.md` -> `.github/pull_request_template.md`
    - `templates/.github/workflows/ci.node.template.yml` -> `.github/workflows/ci.yml`
    - `templates/AGENTS.harness.template.md` -> `AGENTS.md`（既存ルールにマージ）
+   - `scripts/arch_guard.sh` をコピーして実行権限を付与する（`chmod +x`）
 2. プレースホルダを置換する:
    - `{PROJECT_NAME}`, `{DEPLOYMENT}`, `{PAGES_URL}`
    - `{CRITICAL_FLOW_1}`, `{CRITICAL_FLOW_2}`, `{CRITICAL_FLOW_3}`
@@ -24,6 +32,7 @@
    - PRゲートは軽量（`test` + `build`）に限定する。
    - 重いE2Eは `main` push、nightly、manual trigger へ分離する。
    - 聖域はまず3本に固定し、必要時のみ拡張する。
+   - Core変更時は `docs/arch/core-change.md` + 契約テスト更新を同PRで必須化する。
 4. ブランチ保護を設定する:
    - リポジトリ設定 -> `main` のBranch protection rulesを開く。
    - `Require status checks to pass before merging` を有効化。
@@ -31,6 +40,7 @@
 5. 最初のbootstrap PRを作成する:
    - S1-S3影響判定を記載する。
    - 証跡（`test`/`build` 結果）を記載する。
+   - `./scripts/arch_guard.sh` 実行結果を記載する。
    - ロールバック手順を記載する。
 
 ## 自然な成長ループ

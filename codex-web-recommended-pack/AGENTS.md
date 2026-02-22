@@ -2,6 +2,7 @@
 
 ## 0. TL;DR（不変ルール）
 - 基本：編集して進める。小さな差分で段階的に進める。
+- 共通憲法（base）は `agents/base/AGENT.md`。プロジェクトAGENTはこの契約を下回らない。
 - PRは小さく（1PR=1目的）。PR本文必須: 目的/変更点/処理フロー/不変条件/失敗時挙動/検証方法/ロールバック。検証証跡は最低1つ（テスト結果 or 手動再現手順 or スクショ）。
 - AIがコード生成/修正する場合は、t-wada流TDD（Red→Green→Refactor、テスト先行）を原則とする。
 - 要件整理時はGA-liteで候補出しを行う（`ga-lite-requirements`）。
@@ -13,6 +14,8 @@
 - 長時間・副作用・破壊的操作の可能性があるコマンドは、実行前に確認する（最小/対象限定→全体）。
 - 「要承認」に当てはまる操作は、実行前に必ず止まって確認する（勝手に進めない）。
 - 文書の最小契約（DDD）：契約は1枚（Core Contract）のみ。置き場は例として `doc/DOMAIN.md`。内容は用語≤10/主要UC3〜5/禁止事項のみ。設計理由・補足・例外・実装詳細はPR本文で回収し、新規設計ドキュメントは増やさない。
+- Architecture Contract（Core&Extensions）は `agents/base/AGENT.md` を正とする。core変更は例外扱いで、理由/影響/契約テスト/回帰/ログ更新を必須とする。
+- Verification: 変更時は `./scripts/arch_guard.sh` を実行し、失敗を残したまま完了しない。
 - コミットが必要な場合は、日本語のコミットメッセージ案を提示する。
 - シークレット方針：鍵/トークン/個人情報らしき値は復唱しない。必要ならマスクを依頼する。
 - 優先順位：ユーザーの最新指示 ＞ この `AGENTS.md` ＞ 一般的な作法。
@@ -34,8 +37,7 @@
 - `20-implementation`: `implementation-playbook` / `tdd-twada`
 - `30-quality`: `second-pass-code-review`
 - `40-git`: `how-to-git-push`
-- `90-utils`: 上記以外（例: `exploration-guidelines`, `ga-decision`, `ga-lite-coding`, `comment-guidelines`, `beginner-explanations`）
-  - Harness運用: `skill-harness-bootstrap`, `skill-harness-grow`, `skill-incident-to-harness`
+- `90-utils`: 上記以外（例: `exploration-guidelines`, `ga-decision`, `ga-lite-coding`, `comment-guidelines`, `beginner-explanations`, `arch_guard`, `core-extensions-bootstrap`）
 
 ## 3. Skills監査（観測・評価・月次）
 - 追記先: `ops/skills-observability/logs/skill-runs.ndjson`（機密は書かない）
@@ -43,3 +45,13 @@
 - 完了条件（運用）: すべてのタスクで `skill-run-logger` 記録を必須とする。未記録のまま完了報告/コミット/PR作成をしない。
 - 最終報告には `task_id/result/evidence` の記録要約を必ず含める。
 - 参照: `ops/skills-observability/README.md`
+
+## HARNESS-SSOT-BEGIN
+- SSoT:   
+- 聖域定義:
+  - S1: テンプレート文書を追加/更新できる
+  - S2: skillsを追加/更新できる
+  - S3: .codex同期まで完了できる
+- 各PRでS1-S3影響判定を必須化する。
+- インシデント対応では  + （必要なら ）を同PRで更新する。
+## HARNESS-SSOT-END

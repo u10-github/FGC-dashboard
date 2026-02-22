@@ -2,7 +2,7 @@
 
 ## 目的
 `{PROJECT_NAME}` に最小構成のHarness Kitを適用する。
-対象は最小コアのみ: `doc` 3点 + PRゲート + 聖域S1-S3。
+対象は最小コアのみ: `doc` 3点 + `docs/arch` + `tests/contract` + `arch_guard` + PRゲート + 聖域S1-S3。
 
 ## 入力（必須）
 - `{PROJECT_NAME}`
@@ -18,9 +18,16 @@
 - 追加: `templates/.github/workflows/ci.node.template.yml` から `.github/workflows/ci.yml`
   - PR必須チェックは `test` + `build`
   - E2Eは `main`/nightly/manual へ分離
+- 生成:
+  - `templates/docs/arch/README.template.md` から `docs/arch/README.md`
+  - `templates/docs/arch/core-change.template.md` から `docs/arch/core-change.md`
+  - `templates/tests/contract/README.template.md` から `tests/contract/README.md`
+- 追加:
+  - `scripts/arch_guard.sh`（実行権限付与）
 - 追加: テンプレから `.github/pull_request_template.md`
 - `AGENTS.md` にSSoTルール追記:
   - `doc/DoD.md`、`doc/evals.md`、`doc/runbook.md` をSSoTとする
+  - Core&Extensions契約と `./scripts/arch_guard.sh` 実行を追記する
 - ブランチ保護設定手順の案内:
   - Require status checks before merge
   - `.github/workflows/ci.yml` で使用するCIチェック名を選択
@@ -29,6 +36,7 @@
 1. テンプレファイルを対象パスへコピーする。
 2. プレースホルダを置換する:
    - `{PROJECT_NAME}`, `{DEPLOYMENT}`, `{CRITICAL_FLOW_1..3}`, `{PAGES_URL}`, `{TEST_CMD}`, `{BUILD_CMD}`, `{E2E_CMD}`.
+   - Core変更運用の既定値を確認する（`docs/arch/core-change.md`）。
 3. 差分は最小に保つ。PR必須にフルE2Eは追加しない。
 4. 必須セクション付きでPRを作成する:
    - Purpose / Changes / Flow / Invariants / Failure behavior / Validation / Rollback.
