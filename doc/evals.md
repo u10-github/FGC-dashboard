@@ -6,9 +6,9 @@
 ## 対応表
 | Zone | Flow | 必須チェック | コマンド / 手順 | Owner |
 |---|---|---|---|---|
-| S1 | {CRITICAL_FLOW_1} | {CHECK_S1} | {TEST_CMD_S1} | {OWNER_TEAM} |
-| S2 | {CRITICAL_FLOW_2} | {CHECK_S2} | {TEST_CMD_S2} | {OWNER_TEAM} |
-| S3 | {CRITICAL_FLOW_3} | {CHECK_S3} | {TEST_CMD_S3} | {OWNER_TEAM} |
+| S1 | ゲームタイトル一覧を取得して表示できる | 主要フローが成立する | npm run test | u10-github |
+| S2 | 検索/フィルタで一覧を絞り込める | 変更系フローが成立する | npm run build | u10-github |
+| S3 | ビルド成果物を生成できる | 復旧/公開フローが成立する | npm run preview | u10-github |
 
 ## PR更新ルール
 - S1-S3の挙動変更がある場合は、この表を同じPRで更新する。

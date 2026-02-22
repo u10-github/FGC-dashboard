@@ -1,30 +1,30 @@
 # runbook: FGC-dashboard
 
 ## サービス概要
-- デプロイ: {DEPLOYMENT}
-- URL: {PAGES_URL}
-- オーナー: {OWNER_TEAM}
+- デプロイ: 静的配信（Vite build、配信先はリポジトリ運用で管理）
+- URL: ローカル確認: npm run dev
+- オーナー: u10-github
 
 ## 初動トリアージ
 - 症状:
-  - {SYMPTOM_EXAMPLE}
+  - データ取得後にカード一覧が空のままになる
 - 最初の確認:
   - [ ] 最新CIステータス
   - [ ] 直近でマージされたPR
   - [ ] 障害時間帯のログ
 
 ## インシデント記録テンプレート
-### ID: RB-{YYYYMMDD}-{N}
-- 症状: {SYMPTOM}
-- 影響範囲: {IMPACT_SCOPE}
-- 再現手順: {REPRO_STEPS}
+### ID: RB-YYYYMMDD-N
+- 症状: 例）データ取得後にカード一覧が空のままになる
+- 影響範囲: 例）主要ユーザー操作の一部が失敗
+- 再現手順: 例）直近リリース後に対象ページを開いて操作
 - 確認項目:
-  - [ ] {CHECK_1}
-  - [ ] {CHECK_2}
-- 応急対応: {MITIGATION}
-- 恒久対応: {PERMANENT_FIX}
-- 関連eval: {EVAL_ID}
-- 関連PR: {PR_LINK}
+  - [ ] vitest が成功する
+  - [ ] vite build が成功する
+- 応急対応: 例）直前の安定コミットにロールバック
+- 恒久対応: 例）原因修正 + 回帰チェック追加
+- 関連eval: 例）EV-FGC-dashboard-001
+- 関連PR: 例）https://github.com/u10-github/FGC-dashboard/pull/123
 
 ## 更新ポリシー
 - runbook + evals更新前にインシデントをクローズしない。
