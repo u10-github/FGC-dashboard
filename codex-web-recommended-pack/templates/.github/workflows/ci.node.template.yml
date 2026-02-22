@@ -1,0 +1,41 @@
+name: ci
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    - cron: "0 3 * * *"
+
+jobs:
+  pr-check:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "{NODE_VERSION}"
+          cache: "{PACKAGE_MANAGER}"
+      - name: 依存関係のインストール
+        run: {INSTALL_CMD}
+      - name: テスト
+        run: {TEST_CMD}
+      - name: ビルド
+        run: {BUILD_CMD}
+
+  e2e-optional:
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "{NODE_VERSION}"
+          cache: "{PACKAGE_MANAGER}"
+      - name: 依存関係のインストール
+        run: {INSTALL_CMD}
+      - name: E2E（任意の重いチェック）
+        run: {E2E_CMD}
