@@ -1,20 +1,50 @@
-# Codex Web Recommended Pack
+# FGC-dashboard
 
-このフォルダは、各プロジェクトに配置して Codex Web に読ませるための最小推奨セットです。
+FGC向けのSteam同時接続数ダッシュボードです。  
+`public/data/players.json` を読み込み、タイトルごとの同接数とセール情報を一覧表示します。
 
-## 含めたもの
-- `AGENTS.md`
-- `skills/00-core/`
-  - `mode-router`
-  - `response-templates`
-  - `reporting-conventions`
-- `skills/90-utils/`
-  - `approval-rules`
-  - `todo-taskflow`
-  - `skill-run-logger`
-  - `skill-run-validator`
-  - `task-close-checklist`
+## 技術スタック
 
-## 使い方
-1. このフォルダ配下をプロジェクトルートにコピーします。
-2. 追加で必要なスキル（例: `10-requirements`, `20-implementation`, `30-quality`）は用途に応じて追加してください。
+- React 18
+- TypeScript
+- Vite
+- Vitest
+
+## セットアップ
+
+```bash
+npm install
+```
+
+## 開発
+
+```bash
+npm run dev
+```
+
+## テスト
+
+```bash
+npm test
+```
+
+## ビルド
+
+```bash
+npm run build
+```
+
+## データ更新
+
+Steam API / Store API から最新データを取得して `public/data/players.json` を更新します。
+
+```bash
+npm run fetch:players
+```
+
+## 主要ディレクトリ
+
+- `src/`: UI本体
+- `public/data/`: 表示データ（`games.json`, `players.json`）
+- `scripts/`: データ取得スクリプト
+- `doc/`: 運用ドキュメント（runbook/evals/DoD）
